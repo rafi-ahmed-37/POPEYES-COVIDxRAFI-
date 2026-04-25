@@ -1,0 +1,13 @@
+{
+  "name": "Popeyes Louisiana Kitchen",
+  "description": "A high-converting, fully functional restaurant website for Popeyes, featuring a menu, location finder, catering form, and more.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Location-based services",
+    "Interactive menu and cart system",
+    "Real-time countdown deals",
+    "Responsive design"
+  ]
+}

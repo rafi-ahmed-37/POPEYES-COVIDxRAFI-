@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", sans-serif;
+  
+  --color-popeyes-orange: #F26722;
+  --color-popeyes-dark-orange: #C0501A;
+  --color-popeyes-black: #1A1A1A;
+  --color-popeyes-gray: #262626;
+  --color-popeyes-gold: #FFD700;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-popeyes-black text-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold uppercase tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-popeyes {
+    @apply relative overflow-hidden px-8 py-3 rounded-md font-display text-lg uppercase tracking-wider transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-popeyes-orange text-white hover:bg-popeyes-dark-orange shadow-lg hover:shadow-popeyes-orange/20;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-popeyes-orange text-popeyes-orange hover:bg-popeyes-orange hover:text-white;
+  }
+  
+  .glass-card {
+    @apply bg-popeyes-gray rounded-2xl border border-white/10 backdrop-blur-sm;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 px-4 max-w-7xl mx-auto;
+  }
+}
+
+/* Animations */
+@keyframes spice-float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.spice-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #F26722;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spice-float 3s infinite ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #F26722;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C0501A;
+}
